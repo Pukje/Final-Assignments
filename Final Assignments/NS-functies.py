@@ -5,9 +5,8 @@ LangeritAfstand = 50
 
 def standaardprijs(afstandKM):
     prijs = 0
-    if afstandKM <= 0:
-        prijs = prijs
-    elif afstandKM > LangeritAfstand:
+
+    if afstandKM > LangeritAfstand:
         prijs = (afstandKM * PrijsperKM) + Langeritprijs * (LangeritprijsKM * afstandKM)
     else:
         prijs = afstandKM * PrijsperKM
@@ -43,4 +42,4 @@ tests = [
 ]
 
 for test in tests:
-    print('test: €' + str( format( ritprijs( test[0], test[1], test[2]),'.2f') ) + '---standaard: €'+ str(standaardprijs(test[2])))
+    print('test: €' + str(format( ritprijs( test[0], test[1], test[2]),'.2f')) + '---standaard: €'+ str(standaardprijs(test[2])))
