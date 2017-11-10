@@ -7,10 +7,11 @@ stations = [
 
 def inlezen_beginstation(stations):
     stationsnaam = input('Het beginstation: ')
-    if stationsnaam in stations:
-        print(stationsnaam + ' zit in het traject')
-    elif stationsnaam == "Maastricht":
+    if stationsnaam == "Maastricht":
+        print('Dit is het eindstation, je kan hier niet beginnen')
         stationsnaam = ''
+    elif stationsnaam in stations:
+        print(stationsnaam + ' zit in het traject')
     else:
         print('Dit Station bestaat niet/Zit niet in het traject, probeer het nog eens.')
         stationsnaam = ''
